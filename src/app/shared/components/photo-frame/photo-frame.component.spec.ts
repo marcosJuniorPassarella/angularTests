@@ -81,4 +81,18 @@ describe(PhotoFrameComponent.name, () => {
     expect(element.getAttribute('aria-label')).toBe('0: people liked');
   });
 
+  // TESTA SE O NOSSO COMPONENTE ESTÁ RECEBENDO O SRC E A DESCCRIPTION
+  // QUANDO ESSES VALORES ESTIVEREM ASSOCIADOS AS PROPRIEDADES SRC E DESCRIPTION
+  // ELE DEVERÁ EXIBIR A IMAGEM E O ALT DEVE SER A NOSSA PROPRIEDADE DESCRIPTION
+  it(`(D) Should display image width src and description when bount to
+  properties`, () => {
+    const description = 'some description';
+    const src = 'http://somesite.com/img.jpg';
+    component.src = src;
+    component.description = description;
+    fixture.detectChanges();
+    const img: HTMLImageElement = fixture.nativeElement.querySelector('img');
+    expect(img.getAttribute('src')).toBe(src);
+    expect(img.getAttribute('alt')).toBe(description);
+  });
 });
