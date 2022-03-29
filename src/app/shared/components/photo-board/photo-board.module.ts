@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhotoFrameModule } from '../photo-frame/photo-frame.module';
 import { PhotoBoardComponent } from './photo-board.component';
-import { PhotoBoardService } from './PhotoBoard.service';
+import { PhotoBoardService } from './services/PhotoBoard.service';
 
 @NgModule({
   declarations: [PhotoBoardComponent],
